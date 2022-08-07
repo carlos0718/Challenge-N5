@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiPermisos", "ApiPermisos\ApiPermisos.csproj", "{B6F0A0D1-4EE0-4CF8-846B-7FE6091B924F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6F0A0D1-4EE0-4CF8-846B-7FE6091B924F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F0A0D1-4EE0-4CF8-846B-7FE6091B924F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F0A0D1-4EE0-4CF8-846B-7FE6091B924F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F0A0D1-4EE0-4CF8-846B-7FE6091B924F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6F9750D-15C4-47BB-981B-09991C2192FA}
+	EndGlobalSection
+EndGlobal
