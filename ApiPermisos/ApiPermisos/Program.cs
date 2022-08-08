@@ -1,6 +1,24 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ApiPermisos.Data;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddDbContext<ApiPermisosContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ApiPermisosContext") ?? throw new InvalidOperationException("Connection string 'ApiPermisosContext' not found.")));
+
 // Add services to the container.
+
+builder.Services.AddCors(options => {
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy => {
+                          policy.WithOrigins("http://localhost:3000")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                      });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -16,7 +34,10 @@ if (app.Environment.IsDevelopment()) {
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
 
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
 
 app.MapControllers();
