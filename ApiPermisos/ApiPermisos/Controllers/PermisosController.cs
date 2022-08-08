@@ -69,7 +69,7 @@ namespace ApiPermisos.Controllers {
 
         // POST: api/Permisoes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("RequestPermisos")]
         public async Task<ActionResult<Permiso>> PostPermiso(Permiso permiso) {
             if (_context.Permiso == null) {
                 return Problem("Entity set 'ApiPermisosContext.Permiso'  is null.");
