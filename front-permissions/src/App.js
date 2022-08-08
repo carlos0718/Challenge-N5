@@ -16,7 +16,7 @@ function App() {
 
 	return (
 		<div className='App-header'>
-			<div className='App'>
+			<div className='App' key={permissions.id}>
 				<FormDialog
 					title='CREATE PERMISSION'
 					text='Request Permission'

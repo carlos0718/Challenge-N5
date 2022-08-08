@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://localhost:7059/api/Permissions";
+const URL = "https://localhost:7047/api/Permisos";
 
 axios.create({
 	baseURL: URL,
@@ -18,12 +18,12 @@ const getPermissions = async () => {
 
 const postPermissions = async (nombre, apellido, tipo) => {
 	try {
-		const response = await axios.post(`${URL}/RequestPermission`, {
+		const response = await axios.post(`${URL}/RequestPermisos`, {
 			nombreEmpleado: nombre,
 			apellidoEmpleado: apellido,
 			tipoPermisoId: tipo,
 		});
-		return response.status;
+		return response.data;
 	} catch (error) {
 		console.log(error);
 	}

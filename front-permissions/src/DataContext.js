@@ -10,20 +10,20 @@ const DataContext = ({ children }) => {
 	const getData = () => getPermissions().then((data) => setPermissions(data));
 
 	const submitPost = (nombre, apellido, codigo) => {
-		postPermissions(nombre, apellido, codigo);
-		setPermissions([...permissions, { nombre, apellido, codigo }]);
+		postPermissions(nombre, apellido, codigo).then((data) => setPermissions([...permissions, data]));
 	};
 
 	const submitPut = (id, nombre, apellido, codigo) => {
 		putPermissions(id, nombre, apellido, codigo);
-		setPermissions(
-			permissions.map((p) => {
-				if (p.id === id) {
-					return { id, nombre, apellido, codigo };
-				}
-				return p;
-			})
-		);
+		permissions.map((item) => {
+			if (item.id === id) {
+				item.nombreEmpleado = nombre;
+				item.apellidoEmpleado = apellido;
+				item.tipoPermisoId = codigo;
+			}
+			return item;
+		});
+		setPermissions([...permissions]);
 	};
 	console.log(permissions);
 	React.useEffect(() => {

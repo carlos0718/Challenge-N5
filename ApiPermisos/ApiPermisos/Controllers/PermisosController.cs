@@ -49,7 +49,7 @@ namespace ApiPermisos.Controllers {
             if (id != permiso.Id) {
                 return BadRequest();
             }
-
+            permiso.FechaPermiso = DateTime.Today.Date;
             _context.Entry(permiso).State = EntityState.Modified;
 
             try {
@@ -74,6 +74,7 @@ namespace ApiPermisos.Controllers {
             if (_context.Permiso == null) {
                 return Problem("Entity set 'ApiPermisosContext.Permiso'  is null.");
             }
+            permiso.FechaPermiso = DateTime.Today.Date;
             _context.Permiso.Add(permiso);
             await _context.SaveChangesAsync();
 

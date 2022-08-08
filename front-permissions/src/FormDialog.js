@@ -30,6 +30,9 @@ export default function FormDialog({ title, text, variant, color, data, submitPo
 		}
 		handleClose();
 	};
+
+	React.useEffect(() => {}, []);
+
 	return (
 		<>
 			<Button variant={variant} color={color} onClick={handleClickOpen}>
