@@ -25,7 +25,6 @@ const DataContext = ({ children }) => {
 		});
 		setPermissions([...permissions]);
 	};
-	console.log(permissions);
 	React.useEffect(() => {
 		getData();
 	}, []);
